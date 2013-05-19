@@ -1,5 +1,7 @@
 package org.jenkinsci.plugins.pretestedintegration;
 
+import hudson.tasks.BuildWrapper;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,9 +12,10 @@ public class PretestedIntegrationPreCheckoutTest extends PretestedIntegrationTes
 
 	public void testShouldCreateInstance() throws Exception {
 		
-		Object obj = new PretestedIntegrationPreCheckout(null);
+		BuildWrapper obj = new PretestedIntegrationPreCheckout(null);
 		assertNotNull(obj);
-		assertTrue(obj instanceof PretestedIntegrationPreCheckoutTest);
+		//assertTrue((obj instanceof ));
+		
 	}
 	
 	public void testShouldReturnRepositoryUrl() throws Exception {
