@@ -2,7 +2,6 @@ package org.jenkinsci.plugins.pretestedintegration;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.util.Scanner;
 
 import static org.mockito.Mockito.*;
@@ -10,10 +9,10 @@ import static org.mockito.Mockito.*;
 public class PretestedIntegrationPreCheckoutTest extends PretestedIntegrationTestCase {
 
 	public void testShouldCreateInstance() throws Exception {
-		Constructor <?> c = PretestedIntegrationPreCheckout.class.getConstructor(String.class);
-		Object inst = c.newInstance("foo");
 		
-		assertNotNull(inst);
+		Object obj = new PretestedIntegrationPreCheckout(null);
+		assertNotNull(obj);
+		assertTrue(obj instanceof PretestedIntegrationPreCheckoutTest);
 	}
 	
 	public void testShouldReturnRepositoryUrl() throws Exception {
