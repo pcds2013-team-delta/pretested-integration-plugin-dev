@@ -98,6 +98,8 @@ public class HgUtils {
 		MercurialSCM scm = null;
 		try {
 			scm = (MercurialSCM) project.getScm();
+			if(!(scm instanceof MercurialSCM))
+				throw new ClassCastException("Incorrect instance");
 		} catch(ClassCastException e) {
 			// This job is not using Mercurial. Nothing we can do now...
 			PretestUtils.logError(listener, "The chosen SCM is not Mercurial!");
